@@ -8,7 +8,7 @@ function Apple() {
   };
 
   this.draw = function() {
-    ctx.fillStyle = "#a8e4a0";
+    ctx.fillStyle = "#ff0800";
     ctx.fillRect(this.x, this.y, scale, scale);
   };
 }

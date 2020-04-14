@@ -1,7 +1,7 @@
 const canvas = document.querySelector(".canvas");
 const ctx = canvas.getContext("2d");
 
-const scale = 20;
+const scale = 25;
 const rows = canvas.height / scale;
 const cols = canvas.width / scale;
 
@@ -10,7 +10,7 @@ var apple;
 
 var game;
 var gameSpeed = 120;
-var slow = 150, normal = 120, fast = 90;
+var slow = 150, normal = gameSpeed, fast = 90;
 
 (function setup() {
   snake = new Snake();
@@ -31,6 +31,7 @@ function start(){
       apple.pickLocation();
     }
     snake.collision();
+    win();
   }, gameSpeed);
 }
 
@@ -51,7 +52,23 @@ function changeSpeed(speed, id) {
       gameSpeed = speed;
       snake.reset();
       clearInterval(game);
-      document.getElementById(id).classList.add("activeButton");
+      document.getElementById(id).focus();
+      start();
+    }
+    else{
+
+    }
+  }
+}
+
+function win(){
+  if (snake.tail == (rows*cols)){
+    clearInterval(game);
+    var again = window.confirm("You Won!\nPlay Again?");
+    if (again){
+      snake.reset();
+      gameSpeed = normal;
+      document.getElementById("normal").focus();
       start();
     }
   }

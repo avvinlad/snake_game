@@ -3,7 +3,7 @@
     font-family: 'Source Code Pro', monospace;
 }
 
-.regButton, button {
+button {
 	background-color:#a8e4a0;
 	border-radius:28px;
 	border:1px solid #a8e4a0;
@@ -22,17 +22,9 @@ button:hover {
 	color: whitesmoke;
 }
 
-.activeButton {
+button:focus {
 	background-color: #688c64;
 	color: #a8e4a0;
 	border:1px solid #688c64;
-	border-radius:28px;
-	cursor:pointer;
-	color:black;
-	font-size:18px;
-	padding:16px 32px;
-	margin: 20px;
-	height: max-content;
-	display: block;
 	text-shadow: black;
 }
