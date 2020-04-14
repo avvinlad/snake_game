@@ -36,13 +36,11 @@ function start(){
 }
 
 window.addEventListener("keydown", (evt) => {
-  // disable arrow key scrolling
   if([32, 37, 38, 39, 40].indexOf(evt.keyCode) != -1) {
     evt.preventDefault();
+    const dir = evt.key.replace("Arrow", "");
+    snake.changeDir(dir);
   }
-
-  const dir = evt.key.replace("Arrow", "");
-  snake.changeDir(dir);
 });
 
 function changeSpeed(speed, id) {

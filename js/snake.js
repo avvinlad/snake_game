@@ -6,6 +6,8 @@ function Snake() {
   this.trail = [];
   this.tail = 0;
 
+  var curDir = "";
+
   this.draw = function () {
     ctx.fillStyle = "#a8e4a0";
 
@@ -39,22 +41,23 @@ function Snake() {
   };
 
   this.changeDir = function (dir) {
-    if (dir == "Up") {
+    if (dir == "Up" && curDir != "Down") {
       this.xspeed = 0;
       this.yspeed = scale * -1;
     } 
-    else if (dir == "Down") {
+    else if (dir == "Down" && curDir != "Up") {
       this.xspeed = 0;
       this.yspeed = scale * 1;
     } 
-    else if (dir == "Left") {
+    else if (dir == "Left" && curDir != "Right") {
       this.xspeed = scale * -1;
       this.yspeed = 0;
     } 
-    else if (dir == "Right") {
+    else if (dir == "Right" && curDir != "Left") {
       this.xspeed = scale * 1;
       this.yspeed = 0;
     }
+    curDir = dir;
   };
 
   this.eat = function(posx, posy) {
