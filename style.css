@@ -1,0 +1,38 @@
+:root {
+    background-color: rgb(50, 50, 50);
+    font-family: 'Source Code Pro', monospace;
+}
+
+.regButton, button {
+	background-color:#a8e4a0;
+	border-radius:28px;
+	border:1px solid #a8e4a0;
+	cursor:pointer;
+	color:black;
+	font-size:18px;
+	padding:16px 32px;
+	margin: 20px;
+	height: max-content;
+	display: block;
+	text-shadow: black;
+}
+button:hover {
+	background-color:#5cbf2a;
+	border:1px solid #5cbf2a;
+	color: whitesmoke;
+}
+
+.activeButton {
+	background-color: #688c64;
+	color: #a8e4a0;
+	border:1px solid #688c64;
+	border-radius:28px;
+	cursor:pointer;
+	color:black;
+	font-size:18px;
+	padding:16px 32px;
+	margin: 20px;
+	height: max-content;
+	display: block;
+	text-shadow: black;
+}
